@@ -3,16 +3,19 @@ import "./../styles/App.css";
 
 
 function App() {
-  const [txt, setShow] = useState('')
+  const [show, setShow] = useState(false)
 
   const handleClick = () => {
         // console.log('djgfdj')
-        setShow("Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy")
+        setShow(true)
   }
   return (
     <div id="main">
        <button id="click" type="submit" onClick={()=>{handleClick()}}>Click</button>
-       <p id="para">{txt}</p>
+       {show === true ? (
+        <p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy
+        </p>
+      ) : undefined }
     </div>
   );
 }
